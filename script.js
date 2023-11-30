@@ -1,62 +1,46 @@
 let questions = [
-  {
-    question: "Wer hat HTML erfunden?",
-    "answer 1": "Robbie Williams",
-    "answer 2": "Lady Gaga",
-    "answer 3": "Tim Berners-Lee",
-    "answer 4": "Justin Timberlake",
-    "right answer": 3,
-  },
-  {
-    question: "Was bedeutet das HTML Tag &lt;a&gt;?",
-    "answer 1": "Text Fett",
-    "answer 2": "Container",
-    "answer 3": "Ein Link",
-    "answer 4": "Kursiv",
-    "right answer": 3,
-  },
-  {
-    question: "Wie bindet man eine Website in eine Website ein?",
-    "answer 1": "&lt;iframe&gt;, &lt;frame&gt;, and &lt;frameset&gt;",
-    "answer 2": "&lt;iframe&gt;",
-    "answer 3": "%lt;frame&gt;",
-    "answer 4": "&lt;frameset&gt",
-    "right answer": 2,
-  },
-  {
-    question: "Welche Dateiendung hat eine HTML-Datei?",
-    "answer 1": ".htl",
-    "answer 2": ".htlm",
-    "answer 3": ".html",
-    "answer 4": ".ht",
-    "right answer": 3,
-  },
-  {
-    question: "Was bedeutet CSS?",
-    "answer 1": "Counter Strike: Source",
-    "answer 2": "Computer Style Sheets",
-    "answer 3": "Creative Style System",
-    "answer 4": "Cascading Style Sheets",
-    "right answer": 4,
-  },
-  {
-    question: "Wie kann man in JavaScript eine Variable deklarieren?",
-    "answer 1": "var myVar;",
-    "answer 2": "let myVar;",
-    "answer 3": "const myVar;",
-    "answer 4": "Alle der oben genannten",
-    "right answer": 4,
-  },
-  {
-    question:
-      "Was ist der Zweck der 'document.getElementById()' Methode in JavaScript?",
-    "answer 1": "Elemente nach ihrer Klasse auswählen",
-    "answer 2": "Elemente nach ihrem Tag-Namen auswählen",
-    "answer 3": "Ein Element nach seiner ID auswählen",
-    "answer 4": "Alle der oben genannten",
-    "right answer": 3,
-  },
-];
+    {
+      question: "Wer hat HTML erfunden?",
+      "answer 1": "Robbie Williams",
+      "answer 2": "Lady Gaga",
+      "answer 3": "Tim Berners-Lee",
+      "answer 4": "Justin Timberlake",
+      "right answer": 3,
+    },
+    {
+      question: "Was bedeutet das HTML Tag &lt;a&gt;?",
+      "answer 1": "Text Fett",
+      "answer 2": "Container",
+      "answer 3": "Ein Link",
+      "answer 4": "Kursiv",
+      "right answer": 3,
+    },
+    {
+      question: "Wie bindet man eine Website in eine Website ein?",
+      "answer 1": "&lt;iframe&gt;, &lt;frame&gt; und &lt;frameset&gt;",
+      "answer 2": "&lt;iframe&gt;",
+      "answer 3": "%lt;frame&gt;",
+      "answer 4": "&lt;frameset&gt;",
+      "right answer": 2,
+    },
+    {
+      question: "Welche Dateiendung hat eine HTML-Datei?",
+      "answer 1": ".htl",
+      "answer 2": ".htlm",
+      "answer 3": ".html",
+      "answer 4": ".ht",
+      "right answer": 3,
+    },
+    {
+      question: "Was ist der Zweck der &lt;br&gt; Tag in HTML?",
+      "answer 1": "Erzeugt einen fetten Text",
+      "answer 2": "Fügt einen Zeilenumbruch ein",
+      "answer 3": "Erzeugt einen Link",
+      "answer 4": "Definiert eine Bildquelle",
+      "right answer": 2,
+    },
+  ];
+  
 
 let rightAnswers = 0;
 
