@@ -1,0 +1,18 @@
+@media (max-width: 500px){
+    .card{
+        width: 100%;
+    }
+
+    .quiz-card{
+        width: 100%;
+    }
+
+    .quiz-answer-card{
+        width: auto;
+        font-size: 15px;
+    }
+
+    #header-image{
+        height: 220px;
+    }
+}

@@ -37,6 +37,10 @@ body{
 
 }
 
+.card-title{
+    text-align: center;
+}
+
 #header-image{
     height: 250px;
     object-fit: cover;

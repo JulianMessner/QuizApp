@@ -40,6 +40,94 @@ let questions = [
       "right answer": 2,
     },
   ];
+
+  let cssQuestions = [
+    {
+      question: "Was ist der Zweck der CSS-Eigenschaft 'margin'?",
+      "answer 1": "Legt die Breite eines Elements fest.",
+      "answer 2": "Definiert den äußeren Abstand eines Elements.",
+      "answer 3": "Steuert die Ausrichtung eines Textes.",
+      "answer 4": "Bestimmt die Schriftart eines Elements.",
+      "right answer": 2,
+    },
+    {
+      question: "Was bewirkt die CSS-Eigenschaft 'display: flex;'?",
+      "answer 1": "Zentriert ein Element horizontal.",
+      "answer 2": "Erstellt einen Rahmen um ein Element.",
+      "answer 3": "Aktiviert den Flexbox-Layout-Modus.",
+      "answer 4": "Ändert die Hintergrundfarbe eines Elements.",
+      "right answer": 3,
+    },
+    {
+      question: "Welche Einheit wird in CSS für Schriftgrößen verwendet?",
+      "answer 1": "Pixel",
+      "answer 2": "Em",
+      "answer 3": "Prozent",
+      "answer 4": "Inch",
+      "right answer": 2,
+    },
+    {
+      question: "Was ist das Pseudo-Element '::before' in CSS?",
+      "answer 1": "Ein Selektor für das erste Element in einer Liste.",
+      "answer 2": "Ein Platzhalter für den Textinhalt eines Elements.",
+      "answer 3": "Ein Effekt, der vor einem Element angezeigt wird.",
+      "answer 4": "Ein Stil für den Rand eines Elements.",
+      "right answer": 2,
+    },
+    {
+      question: "Wie ändert man die Farbe eines Textes in CSS?",
+      "answer 1": "color: red;",
+      "answer 2": "background-color: blue;",
+      "answer 3": "font-color: green;",
+      "answer 4": "text-style: yellow;",
+      "right answer": 1,
+    },
+  ];
+  
+  
+  let javascriptQuestions = [
+    {
+      question: "Was ist JavaScript?",
+      "answer 1": "Ein Framework für CSS.",
+      "answer 2": "Eine Programmiersprache für Webentwicklung.",
+      "answer 3": "Ein Bildbearbeitungstool.",
+      "answer 4": "Ein Datenbanksystem.",
+      "right answer": 2,
+    },
+    {
+      question: "Was bedeutet 'DOM' in JavaScript?",
+      "answer 1": "Data Object Model",
+      "answer 2": "Document Oriented Model",
+      "answer 3": "Document Object Model",
+      "answer 4": "Digital Output Module",
+      "right answer": 3,
+    },
+    {
+      question: "Welches Schlüsselwort wird in JavaScript verwendet, um eine Funktion zu deklarieren?",
+      "answer 1": "function",
+      "answer 2": "method",
+      "answer 3": "procedure",
+      "answer 4": "define",
+      "right answer": 1,
+    },
+    {
+      question: "Was ist 'AJAX' in JavaScript?",
+      "answer 1": "Ein Animationsframework.",
+      "answer 2": "Eine Bildbearbeitungsbibliothek.",
+      "answer 3": "Asynchronous JavaScript and XML.",
+      "answer 4": "Eine Datenbanksprache.",
+      "right answer": 3,
+    },
+    {
+      question: "Welche Schleifenkonstruktion wird in JavaScript verwendet?",
+      "answer 1": "if-else",
+      "answer 2": "for",
+      "answer 3": "switch",
+      "answer 4": "select",
+      "right answer": 2,
+    },
+  ];
+  
   
 
 let rightAnswers = 0;
@@ -55,19 +143,36 @@ function init() {
   showQuestion();
 }
 
+
 function showQuestion() {
     if (gameIsOver()) {
-        showEndScreen();
-  } else {
-    updatePrograssBar();
-    updateToNextQuestion();
+      showEndScreen();
+    } else {
+      updateProgressBar();
+      updateToNextQuestion();
+    }
   }
-}
+  
 
 function gameIsOver(){
     return currentQuestion >= questions.length;
 }
 
+function changeTab(tabName) {
+    currentQuestion = 0;
+    restartGame();
+    if (tabName === 'css') {
+      questions = cssQuestions;
+    } else if (tabName === 'javascript') {
+      questions = javascriptQuestions;
+    } else if (tabName === 'html'){
+      questions = htmlQuestions; // Falls es weitere Tabs gibt
+    }
+
+    init();
+
+  }
+  
 
 
 function answer(selection) {
@@ -99,14 +204,14 @@ function showEndScreen() {
   
     document.getElementById("amount-of-questions").innerHTML = questions.length;
     document.getElementById("amount-of-right-answers").innerHTML = rightAnswers;
-    document.getElementById("header-image").src = "./img/trophy.png";
+    document.getElementById("header-image").src = "./img/trophy-new.png";
   }
 
 
-function updatePrograssBar(){
+  function updateProgressBar() {
     let percent = (currentQuestion + 1) / questions.length;
     percent = Math.round(percent * 100);
-  
+
     document.getElementById("progress-bar").innerHTML = `${percent} %`;
     document.getElementById("progress-bar").style.width = `${percent}%`;
 }
@@ -146,7 +251,7 @@ function resetAnswerButtons() {
 
 
 function restartGame() {
-  document.getElementById("end-screen").style = "none";
+  document.getElementById("end-screen").style.display = "none";
   document.getElementById("question-body").style = "";
   document.getElementById("header-image").src = "./img/pencil.jpg";
 
