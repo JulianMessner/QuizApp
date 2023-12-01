@@ -3,13 +3,14 @@ body {
     background-image: url('./img/background.png');
     background-repeat: no-repeat;
     background-size: cover;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 #progress-bar {
-    min-width: 5%;
+    min-width: 8%;
     transition: width 0.3s ease;
 }
-
 
 .nav {
     display: flex;
