@@ -1,6 +1,10 @@
 let rightAnswers = 0;
 let currentQuestion = 0;
+let audioApplause = new Audio("./audio/applause.mp3");
 
+let originalHtmlQuestions = [...htmlQuestions];
+let originalCssQuestions = [...cssQuestions];
+let originalJavascriptQuestions = [...javascriptQuestions];
 
 function init() {
   document.getElementById("all-questions").innerHTML = htmlQuestions.length;
@@ -55,15 +59,24 @@ function updateTabStyles(tabName) {
 
 
 function changeTab(tabName) {
-  restartGame();
-  resetAnswerButtons();
-
-  let questionsArray = selectQuestionsArray(tabName);
-  htmlQuestions = [...questionsArray];
-
-  updateTabStyles(tabName);
-  init();
-}
+    restartGame();
+    resetAnswerButtons();
+  
+    let questionsArray;
+  
+    if (tabName === "css") {
+      questionsArray = originalCssQuestions;
+    } else if (tabName === "javascript") {
+      questionsArray = originalJavascriptQuestions;
+    } else if (tabName === "html") {
+      questionsArray = originalHtmlQuestions;
+    }
+  
+    updateTabStyles(tabName);
+    htmlQuestions = [...questionsArray];
+    stopApplauseSound();
+    init();
+  }
 
 
 function handleCorrectAnswer(selection) {
@@ -132,6 +145,18 @@ function showEndScreen() {
   hideQuestionBody();
   showEndScreenDetails();
   updateProgressBarToEnd();
+  playApplauseSound();
+}
+
+
+function playApplauseSound(){
+    audioApplause.play();
+}
+
+
+function stopApplauseSound() {
+    audioApplause.pause();
+    audioApplause.currentTime = 0;
 }
 
 
@@ -175,6 +200,7 @@ function resetAnswerButtons() {
 
 
 function restartGame() {
+  stopApplauseSound();
   document.getElementById("end-screen").style.display = "none";
   document.getElementById("question-body").style = "";
   document.getElementById("header-image").src = "./img/header.png";
