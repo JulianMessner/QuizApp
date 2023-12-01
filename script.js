@@ -132,6 +132,10 @@ let rightAnswers = 0;
 
 let currentQuestion = 0;
 
+let originalHtmlQuestions = [...htmlQuestions];
+let originalCssQuestions = [...cssQuestions];
+let originalJavascriptQuestions = [...javascriptQuestions];
+
 let audio_success = new Audio("./audio/right.mp3");
 let audio_fail = new Audio("./audio/wrong.mp3");
 
@@ -158,22 +162,27 @@ function changeTab(tabName) {
   restartGame();
   resetAnswerButtons();
 
+  let questionsArray;
+
   if (tabName === "css") {
-    htmlQuestions = [...cssQuestions];
+    questionsArray = originalCssQuestions;
     document.getElementById("pills-css-tab").classList.remove("non-active");
     document.getElementById("pills-css-tab").classList.add("active");
     document.getElementById("pills-html-tab").classList.add("non-active");
     document.getElementById("pills-html-tab").classList.remove("active");
     document.getElementById("pills-javascript-tab").classList.add("non-active");
   } else if (tabName === "javascript") {
-    htmlQuestions = [...javascriptQuestions];
-    document.getElementById("pills-javascript-tab").classList.remove("non-active");
+    questionsArray = originalJavascriptQuestions;
+    document
+      .getElementById("pills-javascript-tab")
+      .classList.remove("non-active");
     document.getElementById("pills-javascript-tab").classList.add("active");
     document.getElementById("pills-css-tab").classList.remove("active");
     document.getElementById("pills-css-tab").classList.add("non-active");
     document.getElementById("pills-html-tab").classList.add("non-active");
     document.getElementById("pills-html-tab").classList.remove("active");
   } else if (tabName === "html") {
+    questionsArray = originalHtmlQuestions;
     document.getElementById("pills-html-tab").classList.add("active");
     document.getElementById("pills-html-tab").classList.remove("non-active");
     document.getElementById("pills-css-tab").classList.remove("active");
@@ -181,6 +190,7 @@ function changeTab(tabName) {
     document.getElementById("pills-javascript-tab").classList.add("non-active");
     document.getElementById("pills-javascript-tab").classList.remove("active");
   }
+  htmlQuestions = [...questionsArray];
   init();
 }
 
