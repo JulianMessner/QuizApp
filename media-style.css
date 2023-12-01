@@ -8,11 +8,27 @@
     }
 
     .quiz-answer-card{
-        width: auto;
-        font-size: 15px;
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .card-body{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 4px !important;
     }
 
     #header-image{
         height: 220px;
+    }
+
+    .question-footer{
+        margin-bottom: 8px;
+        width: 100%;
+    }
+
+    h5{
+        padding-top: 12px;
     }
 }
