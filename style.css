@@ -1,30 +1,36 @@
-body{
+body {
     margin: 0;
     background-image: url('./img/background.png');
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.nav{
+#progress-bar {
+    min-width: 5%;
+    transition: width 0.3s ease;
+}
+
+
+.nav {
     display: flex;
     justify-content: center;
     margin-bottom: 0;
 }
 
-.nav-link{
+.nav-link {
     border-radius: 0 !important;
 }
 
-.active{
+.active {
     background-color: #506c0d !important;
 }
 
-.non-active{
+.non-active {
     background-color: #ffffff94 !important;
     color: black !important;
 }
 
-.non-active:hover{
+.non-active:hover {
     background-color: #c9c2c294 !important;
 }
 
@@ -37,72 +43,73 @@ body{
 
 }
 
-.card-title{
+.card-title {
     text-align: center;
 }
 
-#header-image{
+#header-image {
     height: 250px;
     object-fit: cover;
 }
 
-#progress-bar{
+#progress-bar {
     background-color: #9e9e1c;
 }
 
-.question-footer{
+.question-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-top: 1px solid rgba(0,0,0,0.4);
+    border-top: 1px solid rgba(0, 0, 0, 0.4);
     padding-top: 12px;
 }
 
-.quiz-card{
+.quiz-card {
     width: 30rem;
     border-color: #008024b5 !important;
 }
 
-.quiz-answer-card{
+.quiz-answer-card {
     padding: 8px;
 }
 
-.quiz-answer-card:hover{
+.quiz-answer-card:hover {
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0.05);
 }
 
-.bg-success, .bg-danger{
+.bg-success,
+.bg-danger {
     color: white !important;
 }
 
-.bg-success{
+.bg-success {
     background-color: #579616 !important;
 }
 
-.bg-danger{
+.bg-danger {
     background-color: #e25050 !important;
 }
 
-.width-100{
+.width-100 {
     width: 100%;
 }
 
-.text-center{
+.text-center {
     text-align: center;
 }
 
-.final-headline{
+.final-headline {
     font-size: 38px;
     margin-bottom: 32px;
 }
 
-.button-row{
+.button-row {
     display: flex;
     justify-content: center;
     margin-top: 24px;
 }
 
-#next-button{
+#next-button {
     background-color: #9e9e1c;
 }

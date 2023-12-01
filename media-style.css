@@ -1,34 +1,34 @@
-@media (max-width: 500px){
-    .card{
+@media (max-width: 500px) {
+    .card {
         width: 100%;
     }
 
-    .quiz-card{
+    .quiz-card {
         width: 100%;
     }
 
-    .quiz-answer-card{
+    .quiz-answer-card {
         width: 100%;
         font-size: 14px;
     }
 
-    .card-body{
+    .card-body {
         display: flex;
         flex-direction: column;
         align-items: center;
         padding: 4px !important;
     }
 
-    #header-image{
+    #header-image {
         height: 220px;
     }
 
-    .question-footer{
+    .question-footer {
         margin-bottom: 8px;
         width: 100%;
     }
 
-    h5{
+    h5 {
         padding-top: 12px;
     }
 }
